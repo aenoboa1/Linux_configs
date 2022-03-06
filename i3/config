@@ -68,6 +68,11 @@ for_window [class="zoom"] floating enable
 for_window [class="zoom" title="Zoom - Licensed Account"] floating disable
 for_window [class="zoom" title="Zoom Meeting"] floating disable
 
+# Auto -tiling config https://github.com/nwg-piotr/autotiling
+
+exec_always --no-startup-id autotiling
+
+
 #US-LATAM Keyboard switching
 exec --no-startup-id setxkbmap -layout us,latam -option grp:shifts_toggle
 
@@ -175,12 +180,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 ##=================================================##
 # Assign Workspaces:
 assign[class='code'] $ws1
-assign[class='Google-chrome'] $ws2
+assign[class='Brave-browser'] $ws2
 assign[class='Steam'] $ws4
 assign[class='zoom'] $ws5
 
 for_window [class="code"] move to workspace $ws1
-for_window [class="Google-chrome"] move to workspace $ws2
+for_window [class="Brave-Browser"] move to workspace $ws2
 for_window [class="Steam"] move to workspace $ws4
 for_window [class="zoom"] move to workspace $ws4
 
