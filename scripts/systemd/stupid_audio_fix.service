@@ -1,0 +1,10 @@
+[Unit]
+Description=Fix headphones audio after boot & resume.
+After=multi-user.target suspend.target hibernate.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh '/usr/local/bin/fix_headphones_audio.sh'
+
+[Install]
+WantedBy=multi-user.target suspend.target hibernate.target
