@@ -1,6 +1,8 @@
 #!/bin/bash
 
-
+# keyboard color changing script based on wallpaper images for linux
+# The following script has been tested on HP OMEN 15-DC 
+# @andrew_nb
 function read_image()
 {
     read -p 'Please , input the image path:' image_path
@@ -13,7 +15,7 @@ function read_image()
         
         echo "******* Created cache colors path ******* "        
         image=${image_path##*/}   
-        array=($(find /home/elegant00/.cache/wal/schemes/ -name "*$image"))
+        array=($(find /home/$USER/.cache/wal/schemes/ -name "*$image"))
         bar=$(printf "%s " "${array[@]}")
         bar=${bar:1}
         foo="/${bar%?}"
