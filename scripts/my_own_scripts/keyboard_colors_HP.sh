@@ -37,7 +37,8 @@ function read_image()
         echo 'Is an image '
        
         # create wal cache colors 
-        # sudo -u $SUDO_USER bash "wal -n -i '$image_path'"
+        sudo -u $SUDO_USER bash -c "wal -q -n -i '$image_path'"
+        #sudo -u $SUDO_USER bash "wal -n -i '$image_path'"
         
         if [ $? -eq 0 ]; then
             echo "******* Created cache colors path ******* "
@@ -48,7 +49,6 @@ function read_image()
         image=${image_path##*/}  
         # Created SUDO_USER to fetch user env variable
         array=($(find /home/$SUDO_USER/.cache/wal/schemes/ -name "*$image"))
-
 
         bar=$(printf "%s " "${array[@]}")
         bar=${bar:1}
