@@ -159,6 +159,7 @@ animation-charging-framerate = 750
 [module/keyboard]
 type = internal/xkeyboard
 
+format-foreground = ${color.background}
 ; List of indicators to ignore
 blacklist-0 = num lock
 blacklist-1 = scroll lock
@@ -166,6 +167,7 @@ blacklist-1 = scroll lock
 ;   <label-layout> (default)
 ;   <label-indicator> (default)
 format = <label-layout> <label-indicator>
+format-background = ${color.magenta}
 format-prefix = 
 ; Available tokens:
 ;   %layout%
@@ -173,6 +175,9 @@ format-prefix = 
 ;   %number%
 ; Default: %layout%
 label-layout = " %layout%"
+indicator-icon-1 = caps lock;-CL;
+label-indicator-on-capslock = CL
+label-indicator-on-capslock-foreground = ${color.m-dark-red}
 
 ; Available tokens:
 ;   %name%
@@ -245,6 +250,43 @@ label-urgent-padding = 1
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+format-background = ${color.spotify_back}
+format-prefix = " "
+format-prefix-foreground = #4C566A
+format = <label> <exec>
+exec =  ~/.config/i3/polybar/polybar-spotify/scroll_spotify_status.sh
+label = %output%
+label-foreground = #4C566A
+
+
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "%{F#4C566A}  "
+format-background = ${color.spotify_back}
+format = <label>
+
+click-left = playerctl previous -p spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+format-background = ${color.spotify_back}
+hook-0 = echo "%{F#4C566A}懶"
+hook-1 = echo "%{F#4C566A}懶"
+initial = 1
+click-left = playerctl play-pause -p spotify
+
+[module/spotify-next]
+format-background = ${color.spotify_back}
+type = custom/script
+exec = echo "%{F#4C566A} "
+format = <label>
+click-left = playerctl next -p spotify
+
 
 [module/title]
 type = internal/xwindow
@@ -253,8 +295,8 @@ type = internal/xwindow
 ; Available tags:
 ;   <label> (default)
 format = <label>
-format-background = #{color.background}
-format-foreground = #{color.foreground}
+format-background = ${color.background}
+format-foreground = ${color.foreground}
 format-padding = 4
 
 ; Available tokens:
@@ -266,9 +308,9 @@ label-maxlen = 50
 ; Used instead of label when there is no window title
 ; Available tokens:
 ;   None
-label-empty = Empty
+label-empty = Desktop
 label-empty-foreground = #707880
-
+label-underline =${color.nord8}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 [module/cpu]
@@ -276,7 +318,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-padding = 0
-format-prefix-foreground = ${color.background}
+format-prefix-foreground = ${color.m-teal}
 format-foreground = ${color.background}
 format-background = ${color.green}
 label = "%{A1:i3-sensible-terminal -e btop &:}%percentage%% %{A}"
@@ -311,7 +353,7 @@ fixed-values = true
 
 format-mounted = <label-mounted>
 format-mounted-prefix = " "
-format-mounted-prefix-foreground = ${color.background}
+format-mounted-prefix-foreground = ${color.altblack}
 format-mounted-prefix-background = ${color.cyan}
 
 format-unmounted = <label-unmounted>
@@ -334,7 +376,7 @@ interval = 1
 
 format = <label>
 format-prefix = ""
-format-prefix-foreground = ${color.background}
+format-prefix-foreground = ${color.m-brown}
 format-foreground = ${color.background}
 format-background = ${color.yellow}
 

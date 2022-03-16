@@ -42,7 +42,7 @@ launch_bar() {
 		
 	if [[ ! $(pidof polybar) ]]; then
 		polybar -q bar -c "$DIR"/config &
-	else
+    else
 		polybar-msg cmd restart
 	fi
 }

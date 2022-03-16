@@ -4,7 +4,7 @@
 margin-bottom = 0
 margin-top = 0
 
-include-file = ~/.config/i3/polybar/colors
+include-file = ~/.config/i3/polybar/colors_og
 include-file = ~/.config/i3/polybar/modules
 include-file = ~/.config/i3/polybar/decor
 include-file = ~/.config/i3/polybar/system
@@ -12,7 +12,7 @@ include-file = ~/.config/i3/polybar/system
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [bar/main]
-monitor =
+monitor = ${env:MONITOR}
 monitor-fallback =
 monitor-strict = false
 
@@ -22,6 +22,7 @@ bottom = false
 fixed-center = true
 
 width = 100%
+;; height = 21
 height = 21
 
 offset-x = 0%
@@ -54,7 +55,8 @@ font-3 = "Iosevka Nerd Font:size=18;4"
 # Default
 modules-left = spacing BLD launcher BRD dot GLD cpu YPL memory CPL filesystem CRD dot wired-network title
 modules-center = LD i3 RD
-modules-right = RLD battery RRD dot GLD volume YPL backlight YRD dot BLD time BRD spacing
+modules-right =  SLD spotify spotify-prev spotify-play-pause spotify-next SRD dot MLD keyboard RPL battery RUD volume YPL backlight BPL time BRD spacing
+# modules-right = kernel dot MLD keyboard RPL battery RUD volume YPL backlight BPL time BRD spacing
 
 spacing = 0
 dim-value = 1.0
@@ -73,6 +75,7 @@ enable-ipc = true
 cursor-click = 
 cursor-scroll = 
 
+
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [settings]
@@ -88,5 +91,4 @@ compositing-underline = over
 compositing-border = over
 
 pseudo-transparency = false
-
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
