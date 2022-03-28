@@ -1,0 +1,108 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+include-file = ~/.config/bspwm/polybar/colors_aero
+include-file = ~/.config/bspwm/polybar/axyl_modules/modules
+include-file = ~/.config/bspwm/polybar/decor
+include-file = ~/.config/bspwm/polybar/system
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[bar/main]
+monitor = ${env:MONITOR}
+monitor-strict = false
+
+wm-restack = bspwm
+
+override-redirect = false
+
+bottom = false
+fixed-center = true
+
+width = 100%
+height = 21
+;; height = 20
+
+offset-x = 0%
+offset-y = 0%
+
+background = ${color.background}
+foreground = ${color.foreground}
+
+radius-top = 0.0
+radius-bottom = 0.0
+
+line-size = 2
+line-color = ${color.blue}
+
+border-size = 6
+border-color = ${color.background}
+
+padding = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+;;font-0 = "Sarasa Mono Slab K:size=12;4"
+;;font-0 = "SF-Pro:pixelsize=12;2:antialias=true:hinting=true"
+font-0 = "SF Pro:style=Medium:pixelsize=13;4:antialias=true:hinting=true"
+font-1 = "Iosevka Nerd Font:size=12;3"
+font-2 = "Iosevka Nerd Font:size=16;4"
+font-3 = "Iosevka Nerd Font:size=18;4"
+font-4 = "Sarasa Mono Slab K:size=13;2:antialias=true:hinting=true"
+;;font-4 = "Sarasa Mono Slab K:size=14;2:antialias=true:hinting=true"
+font-5 = "SF Pro Rounded:pixelsize=11;4:antialias=true:hinting=true"
+font-6 = "SFMono Nerd Font Mono:style=Semibold:pixelsize=11;4:antialias=true:hinting=true"
+
+# Default
+# modules-left = BLD launcher BRD dot LD bspwm RD  dot GLD cpu YPL memory CPL filesystem CRD  
+# modules-center = title
+#modules-right =  SLD spotify spotify-prev spotify-play-pause spotify-next SRD dot MLD keyboard RPL battery RUD volume YPL backlight BPL time BRD spacing
+
+#modules-right =  dot MLD keyboard RPL battery RUD volume YPL backlight BPL time BRD spacing
+modules-right =   SLD spotify spotify-prev spotify-play-pause spotify-next SRD dot MLD keyboard ARD volume ADD backlight ALBD time ARRD spacing
+
+# bspwm ayxl
+modules-left = spacing MRLD launcher MRRD sep bspwm sep spacing MLD mod MRD dot GLD cpu GPD memory YRD
+modules-center = title 
+#modules-right = BLD battery MPL volume RPL brightness RRD sep GLD cpu YPL memory CPL filesystem CRD sep BLD time BRD spacing
+
+
+spacing = 0
+dim-value = 1.0
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 16
+tray-background = ${color.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+tray-scale = 1.0
+
+enable-ipc = true
+
+
+cursor-click = 
+cursor-scroll = 
+
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+
+screenchange-reload = false
+
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+pseudo-transparency = false
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
