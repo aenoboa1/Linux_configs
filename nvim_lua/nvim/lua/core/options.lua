@@ -33,6 +33,7 @@ opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus=3            -- Set global statusline
 opt.guifont = {"JetBrains Mono",":h13"}
+-- opt.guifont = {"Liga SFMono Nerd Font",":h14"}
 
 -----------------------------------------------------------
 -- Tabs, indent

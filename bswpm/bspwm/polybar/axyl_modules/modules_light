@@ -1,0 +1,330 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/backlight]
+type = internal/xbacklight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+
+card = nvidia_0
+format = <ramp> <label>
+format-background = ${color.bg_yellow}
+
+label = %percentage%%
+label-foreground = ${color.dark_cyan}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-font = 2
+ramp-foreground = ${color.red}
+
+
+; -_-_-
+[module/title]
+type = internal/xwindow
+
+
+; Available tags:
+;   <label> (default)
+format = <label>
+format-background = ${color.background}
+;format-foreground = #D8DEE9
+
+format-foreground = ${color.title}
+
+
+format-padding = 4
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label =   %title%
+label-maxlen = 70
+; Used instead of label when there is no window title
+; Available tokens:
+;   None
+label-empty = Desktop
+label-empty-font = 0
+label-empty-foreground = #707880
+label-underline =${color.blue}
+label-font = 1
+
+; -_-_-_-_-
+
+[module/brightness]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/brightness/
+card = ${system.graphics_card}
+
+enable-scroll = true
+
+format = <ramp> <label>
+format-background = ${color.orange}
+format-padding = 1
+
+label = %percentage%%
+label-foreground = ${color.diff_change}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-font = 2
+ramp-foreground = ${color.diff_change}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/volume]
+
+type = internal/pulseaudio
+
+use-ui-max = false
+
+interval = 1
+click-right= pavucontrol&
+
+format-volume = <ramp-volume><label-volume>
+
+
+format-muted = <label-muted>
+format-muted-prefix = "  "
+format-muted-prefix-font = 2
+format-muted-prefix-foreground = ${color.diff_change}
+format-muted-prefix-background = ${color.red}
+
+label-volume = "%percentage%% "
+label-muted = "Mute"
+
+label-volume-background = ${color.red}
+label-muted-background = ${color.red}
+
+label-volume-foreground = ${color.diff_change}
+label-muted-foreground = ${color.}
+
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
+ramp-volume-3 = "  "
+ramp-volume-4 = "  "
+ramp-volume-5 = "  "
+ramp-volume-6 = "  "
+ramp-volume-7 = "  "
+ramp-volume-8 = "  "
+ramp-volume-9 = "  "
+ramp-volume-font = 2
+ramp-volume-foreground = ${color.diff_change}
+ramp-volume-background = ${color.red}
+
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = false
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+fuzzy-match = true
+
+ws-icon-0=I;
+ws-icon-1=II;
+ws-icon-2=III;
+ws-icon-3=IV;
+ws-icon-4=V;
+ws-icon-5=VI;
+ws-icon-6=VII;漣
+ws-icon-default = 
+
+format = <label-state>
+format-font = 2
+
+label-monitor = %name%
+
+label-focused = %name%
+#label-focused-foreground = #f5cd4a
+#label-focused-underline =  #f5cd4a
+label-focused-foreground = ${color.workspace}
+label-focused-underline =  ${color.workspace}
+
+label-focused-background = ${color.background}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-foreground = ${color.light_grey}
+;label-occupied-foreground = #414a4c
+
+
+label-occupied-background = ${color.background}
+;label-occupied-underline =
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${color.red}
+label-urgent-background = ${color.background}
+label-urgent-underline =  ${color.red}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${color.bg0}
+label-empty-padding = 1
+
+; Separator in between workspaces
+label-separator = "∙"
+label-separator-padding = 0
+label-separator-foreground = ${color.altblack}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mod]
+type = internal/bspwm
+
+format = <label-mode>
+format-background = ${color.purple}
+format-foreground = ${color.diff_change}
+format-padding = 1
+format-font = 5
+
+label-monocle = "[M]"
+label-tiled = "[]="
+
+label-floating = ", ><>"
+label-pseudotiled = ", Pseudo"
+label-fullscreen = ", Full"
+
+label-locked = " | Locked"
+label-sticky = " | Sticky"
+label-private = " | Private"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/keyboard]
+type = internal/xkeyboard
+
+format-foreground = ${color.diff_change}
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-background = ${color.purple}
+format-prefix = 
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+; Default: %layout%
+label-layout = " %layout%"
+indicator-icon-1 = caps lock;-CL;
+label-indicator-on-capslock = CL
+label-indicator-on-capslock-foreground = ${color.red}
+
+
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/time]
+type = internal/date
+interval = 1
+format-margin = 0
+time = "%I:%M %p"
+time-alt = "%A, %m/%d/%y"
+
+format-prefix = 
+format-prefix-background = ${color.blue}
+format-prefix-foreground = ${color.diff_change}
+
+label = %time%
+label-foreground = ${color.diff_change}
+label-background = ${color.blue}
+label-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/launcher]
+
+type=custom/text
+content = 
+content-font = 4
+content-foreground= ${color.launcher-fg}
+content-background = ${color.launcher-bg}
+content-padding=1
+
+click-left= $HOME/.config/rofi/launchers/text/launcher.sh
+click-right=  $HOME/.config/rofi/bin/menu_powermenu
+
+
+
+
+
+; --_-_--_-_--_-_--_-_--_-_--_-_--_-_--_-_--_-_-_-_-
+
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+;format-background = #a3add2
+format-background = ${color.spotify_back}
+
+format-prefix = " "
+format-prefix-foreground = #FFFFFF
+format = <label> <exec>
+exec =  ~/.config/i3/polybar/polybar-spotify/scroll_spotify_status.sh
+label = %output%
+label-foreground = #FFFFFF
+label-font = 7
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "%{F#ECEFF4}  "
+label-foreground = ${color.black}
+;format-background = #a3add2
+format-background = ${color.spotify_back}
+format = <label>
+
+click-left = playerctl previous -p spotify
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "%{F#ECEFF4}懶"
+hook-1 = echo "%{F#ECEFF4}懶"
+initial = 1
+click-left = playerctl play-pause -p spotify
+;format-background = #a3add2
+format-background = ${color.spotify_back}
+
+[module/spotify-next]
+format-background = ${color.spotify_back}
+type = custom/script
+exec = echo "%{F#ECEFF4} "
+format = <label>
+click-left = playerctl next -p spotify
+label-background = ${color.spotify_back}
+;label-background = #a3add2

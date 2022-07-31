@@ -25,4 +25,14 @@ require('plugins/nvim-lspconfig')
 require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
 
+-- Enable lualine
+require('lualine').setup {
+  options = {
+    theme = 'onedark'
+    -- ... your lualine config
+  }
+}
+
+
+
 end

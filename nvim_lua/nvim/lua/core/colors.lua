@@ -19,9 +19,18 @@ end
 
 -- OneDark styles: dark, darker, cool, deep, warm, warmer, light
 require('onedark').setup {
-  style = 'darker',
+  style = 'light',
   colors = { fg = '#b2bbcc' }, --default: #a0a8b7
+
+
+options = {
+  bold = true, -- Use the themes opinionated bold styles?
+  italic = true, -- Use the themes opinionated italic styles?
+  underline = true, -- Use the themes opinionated underline styles?
+  undercurl = true -- Use the themes opinionated undercurl styles?
 }
+}
+
 require('onedark').load()
 
 -- statusline color schemes:

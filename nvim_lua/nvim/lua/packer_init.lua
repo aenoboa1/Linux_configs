@@ -87,15 +87,31 @@ return packer.startup(function(use)
       'saadparwaiz1/cmp_luasnip',
     },
   }
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
+  -- Python Debug
+  use 'mfussenegger/nvim-dap-python'
+
+  require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
   --  Coc nvim
   use {'neoclide/coc.nvim', branch = 'release'}
   -- Statusline
-  use {
-    'feline-nvim/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
+ -- use {
+ --   'feline-nvim/feline.nvim',
+ --   requires = { 'kyazdani42/nvim-web-devicons' },
+ -- }
+
+
+
+
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+
   -- Discord rich presence
   use 'andweeb/presence.nvim'
   -- MD Preview
@@ -103,6 +119,27 @@ return packer.startup(function(use)
   -- Rainbow shit
   use {
     'p00f/nvim-ts-rainbow'
+  }
+  -- multicursors
+  --use{
+  --  'terryma/vim-multiple-cursors'
+  --}
+  -- hex coloring
+  use{
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup{}
+    end
+
+  }
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use{
+    'mg979/vim-visual-multi'
   }
 
   use {'iamcco/markdown-preview.nvim'}
@@ -113,6 +150,29 @@ return packer.startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('gitsigns').setup{}
+    end
+  }
+  -- Which key
+
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+    require("toggleterm").setup()
+  end}
+
+  use {
+    'rmagatti/goto-preview',
+    config = function()
+      require('goto-preview').setup {}
     end
   }
 

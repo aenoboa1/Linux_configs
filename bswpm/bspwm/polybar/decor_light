@@ -1,0 +1,256 @@
+[module/spacing]
+type = custom/text
+content = " "
+content-background = ${color.background}
+
+[module/sep]
+type = custom/text
+content = -
+
+content-background = ${color.background}
+content-foreground = ${color.background}
+
+[module/dot]
+type = custom/text
+;content = 
+content = ""
+
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.black}
+content-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/LD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.altblack}
+
+[module/RD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.altblack}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/RLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.red}
+
+[module/RRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.red}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/WLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.white}
+
+[module/WRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.white}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/CLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.cyan}
+
+[module/CRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.cyan}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/MLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.purple}
+
+[module/MRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.purple}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/SLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+ content-foreground = ${color.spotify_back}
+;;content-foreground =#99a3c5
+
+[module/SRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.spotify_back}
+;;content-foreground =  #99a3c5
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/GLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.green}
+
+[module/GRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.green}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/MRLD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.launcher-bg}
+
+[module/MRRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.launcher-bg}
+
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+
+[module/YPL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.magenta}
+content-foreground = ${color.yellow}
+
+[module/CPL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.yellow}
+content-foreground = ${color.cyan}
+
+[module/RUD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.blue}
+content-foreground = ${color.magenta}
+
+[module/GPL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.green}
+content-foreground = ${color.blue}
+
+[module/RPL]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.magenta}
+content-foreground = ${color.blue}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Aero-decor
+
+[module/ADD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.red}
+content-foreground = ${color.orange}
+
+
+[module/ARD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-foreground = ${color.red}
+content-background = ${color.purple}
+
+
+[module/ALBD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-foreground = ${color.blue}
+content-background = ${color.orange}
+
+
+[module/ARRD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.background}
+content-foreground = ${color.blue}
+
+[module/ACD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.cyan}
+content-foreground = ${color.yellow}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- Monitor fix
+
+
+
+
+[module/MLDD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-font = 3
+content-background = ${color.aura-red}
+content-foreground = ${color.aura-blue}
+
+
+[module/LMXD]
+type = custom/text
+content = "%{T3}%{T-}"
+content-background = ${color.background}
+content-foreground = ${color.aura-red}

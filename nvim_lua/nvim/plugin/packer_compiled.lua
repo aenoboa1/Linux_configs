@@ -104,21 +104,27 @@ _G.packer_plugins = {
     path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  ["feline.nvim"] = {
-    loaded = true,
-    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/feline-nvim/feline.nvim"
-  },
   ["gitsigns.nvim"] = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
     path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["goto-preview"] = {
+    config = { "\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17goto-preview\frequire\0" },
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/goto-preview",
+    url = "https://github.com/rmagatti/goto-preview"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = true,
@@ -140,6 +146,27 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0" },
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -195,14 +222,52 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/tagbar",
     url = "https://github.com/preservim/tagbar"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0" },
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
+    url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/elegant00/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: goto-preview
+time([[Config for goto-preview]], true)
+try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17goto-preview\frequire\0", "config", "goto-preview")
+time([[Config for goto-preview]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
