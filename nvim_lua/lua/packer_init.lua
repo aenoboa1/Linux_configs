@@ -58,7 +58,28 @@ return packer.startup(function(use)
       require('nvim-autopairs').setup{}
     end
   }
+  -- Synthwave
 
+  use "lunarvim/synthwave84.nvim"
+
+
+  -- Easy Motion Neovim
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
+  -- stupid bar
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
+  -- markdown
+  use {"ellisonleao/glow.nvim"}
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
@@ -69,40 +90,103 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Color schemes
-  use 'navarasu/onedark.nvim'
+  --use 'navarasu/onedark.nvim'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
 
+
+  use 'navarasu/onedark.nvim'
+
+  -- OneDark Alternative
+  use{
+    "olimorris/onedarkpro.nvim",
+
+      as = "onedarkpro",
+      config = function()
+
+        require("core.colors").setup()
+
+        -- transparency = true,}
+
+      end
+}
+
+
+  use 'sainnhe/edge'
+
   -- LSP
-  use 'neovim/nvim-lspconfig'
+ use 'neovim/nvim-lspconfig'
 
-  -- Autocomplete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'L3MON4D3/LuaSnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-buffer',
-      'saadparwaiz1/cmp_luasnip',
-    },
-  }
+ -- symbols outline
 
+-- use 'simrat39/symbols-outline.nvim'
+
+
+  -- Autocomplete -- Disable
+--  use {
+--    'hrsh7th/nvim-cmp',
+--    requires = {
+--      'L3MON4D3/LuaSnip',
+--      'hrsh7th/cmp-nvim-lsp',
+--      'hrsh7th/cmp-path',
+--      'hrsh7th/cmp-buffer',
+--      'saadparwaiz1/cmp_luasnip',
+--    },
+--  }
+  -- Debugger
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+  -- Python Debug
+  use 'mfussenegger/nvim-dap-python'
+
+  require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 
   --  Coc nvim
   use {'neoclide/coc.nvim', branch = 'release'}
   -- Statusline
-  use {
-    'feline-nvim/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
+ -- use {
+ --   'feline-nvim/feline.nvim',
+ --   requires = { 'kyazdani42/nvim-web-devicons' },
+ -- }
+
+
+
+
+use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+}
+
   -- Discord rich presence
-  use 'andweeb/presence.nvim'
+
+use 'andweeb/presence.nvim'
   -- MD Preview
 
   -- Rainbow shit
   use {
     'p00f/nvim-ts-rainbow'
+  }
+  -- multicursors
+  --use{
+  --  'terryma/vim-multiple-cursors'
+  --}
+  -- hex coloring
+  use{
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup{}
+    end
+
+  }
+
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use{
+    'mg979/vim-visual-multi'
   }
 
   use {'iamcco/markdown-preview.nvim'}
@@ -113,6 +197,29 @@ return packer.startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('gitsigns').setup{}
+    end
+  }
+  -- Which key
+
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
+  use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+    require("toggleterm").setup()
+  end}
+
+  use {
+    'rmagatti/goto-preview',
+    config = function()
+      require('goto-preview').setup {}
     end
   }
 

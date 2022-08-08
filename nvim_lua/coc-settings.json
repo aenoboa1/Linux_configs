@@ -1,6 +1,9 @@
 {
 
+"suggest.invalidInsertCharacters" : ["("],
+"coc.preferences.enableMessageDialog": false,
  "python.pythonPath": "/home/elegant00/.conda/envs/Ml_env/bin/python",
+ "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"},
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",
@@ -22,10 +25,14 @@
     "folder": " ﱮ ",
     "color": "  ",
     "unit": " 塞 ",
-    "snippet": "  ",
-    "text": "  ",
+    "text" : "",
+    "snippet": "",
     "constructor": "  ",
     "value": "  ",
     "enumMember": "  "
-  }
+  },
+
+  "signature.hideOnTextChange": true
+
+
 }
